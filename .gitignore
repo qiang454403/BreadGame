@@ -1,7 +1,7 @@
-Bgame/Library/
-Bgame/Temp/
-Bgame/obj/
-Bgame/.vs/
-Bgame/ProjectSettings/
+Bgame/Library
+Bgame/Temp
+Bgame/obj
+Bgame/.vs
+Bgame/ProjectSettings
 *.csproj
 *.sln
