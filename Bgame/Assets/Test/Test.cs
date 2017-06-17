@@ -22,6 +22,10 @@ public class Test : MonoBehaviour {
     void Update() {
 
     }
+	public void Onclick()
+	{
+		print(11111);
+	}
     void OnGUI()
     {
         if (GUI.Button(new Rect(10, 10, 100, 100), "ss"))

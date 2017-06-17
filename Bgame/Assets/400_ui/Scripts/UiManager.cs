@@ -38,9 +38,14 @@ public class UiManager : SingletonMonoBehaviour<UiManager> {
         {
            
             GameObject d = ResourcesManage.Instance.Load("Prefab/" + face);
+            if (d==null)
+            {
+                Debug.LogError("界面不存在");
+                return;
+            }
             GameObject dt = GameObject.Instantiate(d);
             dt.transform.SetParent(_LowRoot.transform,false);
-            _All_UI.Add("Login", dt.GetComponent<BaseUI>());
+            _All_UI.Add(face, dt.GetComponent<BaseUI>());
         }
     }
 }
