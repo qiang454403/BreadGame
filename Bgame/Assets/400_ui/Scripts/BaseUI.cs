@@ -11,6 +11,7 @@ public class BaseUI : MonoBehaviour {
     public virtual void Init()
     {
         _Root = gameObject;
+        Debug.Log(_Root.name);
     }
     public virtual void Open()
     {

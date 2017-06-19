@@ -48,4 +48,17 @@ public class UiManager : SingletonMonoBehaviour<UiManager> {
             _All_UI.Add(face, dt.GetComponent<BaseUI>());
         }
     }
+
+    public void OpenFace(string facename)
+    {
+        if (_All_UI.ContainsKey(facename))
+        {
+
+            _All_UI[facename].Open();
+        }
+        else
+        {
+            Add_Low(facename);
+        }
+    }
 }

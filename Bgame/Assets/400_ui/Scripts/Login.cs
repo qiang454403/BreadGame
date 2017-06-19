@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class Login : BaseUI {
 
     // Use this for initialization
+    [SerializeField]
     private Button btn_Start;
+    [SerializeField]
     private Button btn_Shop;
+    [SerializeField]
     private Button btn_Exit;
 
     void Start() {
-
+        Init();
     }
 
     // Update is called once per frame
@@ -21,6 +24,13 @@ public class Login : BaseUI {
     public override void Init()
     {
         base.Init();
+
+        btn_Start.onClick.RemoveAllListeners();
+        btn_Shop.onClick.RemoveAllListeners();
+        btn_Exit.onClick.RemoveAllListeners();
+
+        btn_Start.onClick.AddListener(delegate() { OnClick("GoLevel"); });
+        btn_Shop.onClick.AddListener(delegate() {OnClick("GoShop"); });
         
     }
     public override void Destroy()
@@ -32,8 +42,8 @@ public class Login : BaseUI {
     {
         if (ToName == "GoLevel")
         {
-            Debug.Log("去关卡");
-
+            UiManager.Instance.OpenFace("Level");
+            base.Close();
         }
         else if (ToName == "GoShop")
         {
