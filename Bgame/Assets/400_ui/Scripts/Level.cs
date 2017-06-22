@@ -29,10 +29,14 @@ public class Level : BaseUI {
     }
     public void OnClick(string name)
     {
-        if (name== "GoMain")
+        if (name == "GoMain")
         {
             UiManager.Instance.OpenFace("Login");
             base.Close();
+        }
+        else if (name == "GoShop")
+        {
+
         }
     }
 }
