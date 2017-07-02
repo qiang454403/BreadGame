@@ -7,11 +7,11 @@ public class Login : BaseUI {
 
     // Use this for initialization
     [SerializeField]
-    private Button btn_Start;
+    private GameObject btn_Start;
     [SerializeField]
-    private Button btn_Shop;
+    private GameObject btn_Shop;
     [SerializeField]
-    private Button btn_Exit;
+    private GameObject btn_Exit;
 
     void Start() {
         Init();
@@ -25,12 +25,11 @@ public class Login : BaseUI {
     {
         base.Init();
 
-        btn_Start.onClick.RemoveAllListeners();
-        btn_Shop.onClick.RemoveAllListeners();
-        btn_Exit.onClick.RemoveAllListeners();
 
-        btn_Start.onClick.AddListener(delegate() { OnClick("GoLevel"); });
-        btn_Shop.onClick.AddListener(delegate() {OnClick("GoShop"); });
+
+        //btn_Start.onClick.AddListener(delegate() { OnClick("GoLevel"); });
+        // btn_Shop.onClick.AddListener(delegate() {OnClick("GoShop"); });
+        ButtonObject.Get(btn_Start).callback = OnClick;
         
     }
     public override void Destroy()
@@ -38,8 +37,10 @@ public class Login : BaseUI {
         base.Destroy();
 
     }
-    public void OnClick(string ToName)
+    public void OnClick(GameObject _ToName)
     {
+        string ToName = _ToName.name;
+
         if (ToName == "GoLevel")
         {
             UiManager.Instance.OpenFace("Level");

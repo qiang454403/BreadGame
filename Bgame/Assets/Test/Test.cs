@@ -8,16 +8,24 @@ public class Test : MonoBehaviour {
     public Player Data = new Player();
     JsonWriter da = new JsonWriter();
     // Use this for initialization
+    public GameObject rtt;
     void Start() {
-    /*    da.WriteObjectStart();
-        da.WritePropertyName("NAME");
-        da.Write("gzq");
-        da.WritePropertyName("AGE");
-        da.Write(12);
-        da.WriteObjectEnd();
-        */
+        /*    da.WriteObjectStart();
+            da.WritePropertyName("NAME");
+            da.Write("gzq");
+            da.WritePropertyName("AGE");
+            da.Write(12);
+            da.WriteObjectEnd();
+            */
+        ButtonObject.Get(rtt).callback = dh;
+      
+        
     }
-
+   void dh(GameObject name)
+    {
+        Debug.Log("测试回调"+ name.name);
+       
+    }
     // Update is called once per frame
     void Update() {
 
@@ -43,6 +51,7 @@ public class Test : MonoBehaviour {
             UiManager.Instance.Add_Low("Login");
         }
     }
+   
 }
 public class Player
 {
