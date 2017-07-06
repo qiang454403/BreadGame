@@ -17,7 +17,7 @@ public class Test : MonoBehaviour {
             da.Write(12);
             da.WriteObjectEnd();
             */
-        ButtonObject.Get(rtt).callback = dh;
+      
       
         
     }

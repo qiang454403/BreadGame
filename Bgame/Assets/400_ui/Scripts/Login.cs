@@ -31,6 +31,7 @@ public class Login : BaseUI {
         // btn_Shop.onClick.AddListener(delegate() {OnClick("GoShop"); });
         ButtonObject.Get(btn_Start).callback = OnClick;
         
+        
     }
     public override void Destroy()
     {
@@ -41,16 +42,16 @@ public class Login : BaseUI {
     {
         string ToName = _ToName.name;
 
-        if (ToName == "GoLevel")
+        if (ToName == "Btn_Start")
         {
             UiManager.Instance.OpenFace("Level");
             base.Close();
         }
-        else if (ToName == "GoShop")
+        else if (ToName == "Btn_Shop")
         {
             Debug.Log("去商店");
         }
-        else if (ToName == "设置")
+        else if (ToName == "Btn_Exit")
         {
             Debug.Log("退出游戏");
         }

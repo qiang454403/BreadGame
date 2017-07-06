@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class Level : BaseUI {
 
     [SerializeField]
-    private Button Btn_BackMain;
+    private GameObject Btn_BackMain;
     [SerializeField]
-    private Button Btn_GoShop;
+    private GameObject Btn_GoShop;
 
     
 	// Use this for initialization
@@ -23,12 +23,12 @@ public class Level : BaseUI {
     public override void Init()
     {
         base.Init();
-        Btn_BackMain.onClick.RemoveAllListeners();
-        Btn_BackMain.onClick.AddListener(delegate() { OnClick("GoMain"); });
+        ButtonObject.Get(Btn_BackMain).callback = OnClick;
 
     }
-    public void OnClick(string name)
+    public void OnClick(GameObject go)
     {
+        string name = go.name;
         if (name == "GoMain")
         {
             UiManager.Instance.OpenFace("Login");
