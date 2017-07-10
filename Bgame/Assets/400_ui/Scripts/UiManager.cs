@@ -11,7 +11,7 @@ public class UiManager : SingletonMonoBehaviour<UiManager> {
     private GameObject _MidRoot;
     [SerializeField]
     private GameObject _HigRoot;
-
+	
     public Dictionary<string,BaseUI> _All_UI = new Dictionary<string,BaseUI>();
 	void Start ()
     {
@@ -61,4 +61,8 @@ public class UiManager : SingletonMonoBehaviour<UiManager> {
             Add_Low(facename);
         }
     }
+	public void Show1BtnPopup()
+	{
+		
+	}
 }
